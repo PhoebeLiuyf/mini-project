@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>London Cultural Sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="newSection.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="map">
+      <div class="color-bar-container">
+        <div class="color-bar"></div>
+        <div class="color-bar-label-row">
+          <span class="color-bar-label">Low</span>
+          <span class="color-bar-label">High</span>
+        </div>
+      </div>
+    </div>
+    <div id="sidebar">
+      <div class="intro-block">
+        <div class="intro-title">London's Sites by Borough</div>
+        <div class="intro-desc">London is a city brimming with history, culture, and natural charm. Each borough has its own tourism profile — such as Big Ben in Westminster or cultural museums in Kensington and Chelsea — reflecting the city's rich and varied character.</div>
+      </div>
+      <div class="mode-switch">
+        <label><input type="radio" name="mode" value="choropleth" checked> Density Map</label>
+        <label><input type="radio" name="mode" value="points"> Points Map</label>
+      </div>
+      <div id="radar-chart" style="max-height: 90vh; overflow-y: auto;"></div>
+      <div class="layer-controls" id="point-layer-controls" style="display:none;">
+        <label><input type="checkbox" value="Attractions" checked> <span class="legend-color" style="background:#d73027;"></span> Attractions</label>
+        <label><input type="checkbox" value="Museums" checked> <span class="legend-color" style="background:#67001f;"></span> Museums</label>
+        <label><input type="checkbox" value="Galleries" checked> <span class="legend-color" style="background:#081d58;"></span> Galleries</label>
+        <label><input type="checkbox" value="Parks_&_Gardens" checked> <span class="legend-color" style="background:#41b6c4;"></span> Parks & Gardens</label>
+        <label><input type="checkbox" value="Historic_Sites" checked> <span class="legend-color" style="background:#225ea8;"></span> Historic Sites</label>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="newSection.js"></script>
+</body>
+</html>
